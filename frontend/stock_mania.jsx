@@ -1,29 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import Root from './components/root'
+import Root from './components/root'
 import configureStore from './store';
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log("DOMContentLoaded")
-    // const root = document.getElementById('root');
-    // let store;
-    // if (window.currentUser) {
-    //     const preloadedState = {
-    //         entities: {
-    //         users: { [window.currentUser.id]: window.currentUser }
-    //         },
-    //         session: { id: window.currentUser.id }
-    //     };
-    //     store = configureStore(preloadedState);
-    //     delete window.currentUser;
-    // } else {
-    //     store = configureStore()
-    // }
-    
-    // // Testing 
-    // // window.getState = store.getState;
-    // // window.dispatch = store.dispatch;
-    // // Testing 
+// Testing
+import {logout} from './utils/session/api/session_api_util'
+// Testing
 
-    // ReactDOM.render(<Root store={store} />, root)
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOMContentLoaded ;;;;;;")
+    const root = document.getElementById('root');
+    let store;
+    if (window.currentUser) {
+        const preloadedState = {
+            session: { id: window.currentUser.id }
+        };
+        store = configureStore(preloadedState);
+        delete window.currentUser;
+    } else {
+        store = configureStore()
+    }
+
+    window.getState = store.getState;
+    window.dispatch = store.dispatch;
+
+    ReactDOM.render(<Root store={store} />, root)
 })
+
+// Testing
+window.logout = logout;
+// Testing
