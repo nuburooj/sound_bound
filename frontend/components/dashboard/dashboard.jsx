@@ -1,5 +1,5 @@
 import React from "react"
-
+import { Link } from "react-router-dom";
 class Dashboard extends React.Component {
     constructor(props) {
         super(props);
@@ -18,6 +18,9 @@ class Dashboard extends React.Component {
                 <button className="logout-btn" onClick={this.props.logout}>
                     logout
                 </button>
+                <Link className="redirect-stocks-page" to="/stocks">
+                    Stocks
+                </Link>
             </div>
         )
     }

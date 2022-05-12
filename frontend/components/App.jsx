@@ -5,6 +5,7 @@ import LandingPage from './landing/landing'
 import LoginFormContainer from "./session/login/login_form_container";
 import SignupFormContainer from "./session/signup/signup_form_container"
 import DashboardContainer from "./dashboard/dashboard_container"
+import StocksContainer from "./stocks/stocks_container";
 
 const App = () => (
     <div>
@@ -16,6 +17,7 @@ const App = () => (
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
       </Switch>  
       <ProtectedRoute path="/dashboard" component={DashboardContainer} />
+      <ProtectedRoute path="/stocks" component={StocksContainer} />
     </div>
   );
   

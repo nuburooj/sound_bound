@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -34,41 +35,60 @@ class SignupForm extends React.Component {
                     Left Side
                 </div>
                 <div className='signup-page-right'>
-                    Right Side
-                    <form className='signup-form' onSubmit={this.handleSubmit}>
-                        <h3>Sign up for StockMania</h3>
-                        <input
-                        className="signup-form-fname-input"
-                        type="text"
-                        value={first_name}
-                        placeholder="First name"
-                        onChange={this.update("first_name")}
-                        />
-                        <input
-                        className="signup-form-lname-input"
-                        type="text"
-                        value={last_name}
-                        placeholder="Last name"
-                        onChange={this.update("last_name")}
-                        />
-                        <input
-                        className="signup-form-password-input"
-                        type="password"
-                        value={password}
-                        placeholder="Password"
-                        onChange={this.update("password")}
-                        />
-                        <input
-                        className="signup-form-email-input"
-                        type="text"
-                        value={email}
-                        placeholder="Email address"
-                        onChange={this.update("email")}
-                        />
-                        <button type='submit'>
-                            Sign Up
-                        </button>
-                    </form>
+                    <div className='signup-form-container'>
+                        <form className='signup-form' onSubmit={this.handleSubmit}>
+                            <div className="signup-form-top">
+                                <div className="signup-form-header-container">
+                                    <h3>Enter your first and last name as they appear on your government ID.</h3>
+                                </div>
+                                <div className='names-container'>
+                                    <input
+                                    className="signup-form-fname-input"
+                                    type="text"
+                                    value={first_name}
+                                    placeholder="First name"
+                                    onChange={this.update("first_name")}
+                                    />
+                                    <input
+                                    className="signup-form-lname-input"
+                                    type="text"
+                                    value={last_name}
+                                    placeholder="Last name"
+                                    onChange={this.update("last_name")}
+                                    />
+                                </div>
+                                <div className="credentials-container">
+                                    <input
+                                    className="signup-form-email-input"
+                                    type="text"
+                                    value={email}
+                                    placeholder="Email address"
+                                    onChange={this.update("email")}
+                                    />
+                                    <input
+                                    className="signup-form-password-input"
+                                    type="password"
+                                    value={password}
+                                    placeholder="Password"
+                                    onChange={this.update("password")}
+                                    />
+                                </div>
+                                <div className="redirect-container">
+                                    <p>Already have an account?</p>
+                                    <Link className="redirect-login-page" to="/login">
+                                        Login to complete your application
+                                    </Link>
+                                </div>
+                            </div>
+                            <div className="signup-button-container-container">
+                                <div className="signup-button-container" >
+                                    <button className="signup-button" type='submit'>
+                                      Sign Up
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         )
