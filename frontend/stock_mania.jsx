@@ -4,8 +4,10 @@ import Root from './components/root'
 import configureStore from './store';
 
 // Testing
-import {logout} from './utils/session/api/session_api_util'
+import { getAllStocks } from './actions/stock_actions';
+// import {logout} from './utils/session/session_api_util'
 // Testing
+
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOMContentLoaded ;;;;;;")
@@ -28,5 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 // Testing
-window.logout = logout;
+window.getAllStocks = getAllStocks 
+// window.logout = logout;
 // Testing

@@ -58,8 +58,14 @@ class LoginForm extends React.Component {
     const { email, password } = this.state;
     return (
       <div className="login-page-main">
-        <div className="login-form-container">
-          <form className="login-form" onSubmit={this.handleSubmit}>
+        <div className='login-page-left'>
+            <div className='login-page-img-container'>
+              <img className="login-page-img" src={window.login_image} />
+            </div>
+        </div>
+        <div className="login-page-right">
+          <div className="login-form-container">
+            <form className="login-form" onSubmit={this.handleSubmit}>
             <header className="login-form-header">
               <span>Welcome to StockMania</span>
             </header>
@@ -115,24 +121,25 @@ class LoginForm extends React.Component {
                 </span>
                 <br />
                 <span className="login-form-redirect-signup-link-span">
-                  {/* <Link
+                  <Link
                     className="login-form-redirect-signup-link"
                     to="/signup"
                   >
                     Sign up to make money
-                  </Link> */}
+                  </Link>
                 </span>
               </div>
             </footer>
-          </form>
-          <div className="login-form-demo-button-div">
+            </form>
+          </div>
+          {/* <div className="login-form-demo-button-div"> */}
             {/* <button
               className="login-form-demo-button"
             //   onClick={this.handleDemoUser}
             >
               <span className="login-form-demo-button-span">Demo User</span>
             </button> */}
-          </div>
+          {/* </div> */}
         </div>
       </div>
     );
